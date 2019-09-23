@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int[] solution(int[] answers) {
+        int[] answer1 = {1,2,3,4,5};
+        int[] answer2 = {2,1,2,3,2,4,2,5};
+        int[] answer3 = {3,3,1,1,2,2,4,4,5,5};
+        int[] answer = {}; // 출력값
+        int [] win = new int[3]; //3명학생이라 정답체크위한 변수생성
+        
+        //정답이랑 입력값이랑 같은경우 
+        for(int i=0; i<answers.length; i++)
+        {
+            if(answers[i] == answer1[i%5])
+                 win[0] += 1;
+            if(answers[i] == answer2[i%8])
+                win[1] += 1;
+            if(answers[i] == answer3[i%10])
+                win[2] += 1;
+        }
+        
+        //1번학생 기준으로 비교
+        int winner = win[0];
+        for(int i=0; i<win.length; i++)
+        {
+            if(winner < win[i])
+            {
+                winner = win[i];
+            }
+        }
+        
+        // 제일 높은점수 받은 인원 리스트생성
+         List<Integer> wins = new ArrayList<>(); 
+        //win배열비교하여 가장 높은점수 wins List 추가
+         for (int i=0; i<win.length; i++){
+            if (winner==win[i])
+                wins.add(i);
+        }
+        
+        answer = new int [wins.size()];
+        
+        //번호입력
+        for(int i=0; i<wins.size(); i++)
+        {
+            answer[i] = wins.get(i)+1;
+        }
+
+        return answer;
+    }
+}
