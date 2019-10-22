@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        char[] st = s.toCharArray();    //String.toCahrArray 사용해서 char형태로 변형
+        Arrays.sort(st);    //정렬 -> 있어도 되고 없어도 됨. 오름차순
+        answer = new StringBuilder(new String(st)).reverse().toString();    //String 생성후 그 값을 StringBuilder통해서 재생성, -> 오름차순을 다시 내림차순으로
+        return answer;
+    }
+    
+    
+    //테스트
+    
+    public static void main(String[] args)
+    {
+        Solution st = new Solution();
+        System.out.println(st.solution("Abtdhe"));
+    }
+    
+}
+
+
