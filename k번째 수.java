@@ -7,13 +7,13 @@ class Solution {
         for(int i=0; i<length; i++)
         {
             
-            int m = commands[i][0]; //¾Õ
-            int n = commands[i][1]; //µÚ
-            int k = commands[i][2]; //Ã£´Â¼ýÀÚ
+            int m = commands[i][0]; //ì•ž
+            int n = commands[i][1]; //ë’¤
+            int k = commands[i][2]; //ì°¾ëŠ”ìˆ«ìž
             
-            int temp[] = new int[n-m+1];//¾Õ,µÚ ÀÚ¸¥°Å temp¹è¿­¿¡ ÀúÀå
-            int a = 0;//º¯¼ö»ý¼º
-            //¹è¿­ Å©±â
+            int temp[] = new int[n-m+1];//ì•ž,ë’¤ ìžë¥¸ê±° tempë°°ì—´ì— ì €ìž¥
+            int a = 0;//ë³€ìˆ˜ìƒì„±
+            //ë°°ì—´ í¬ê¸°
             for(int j=m-1; j<n; j++)
             {
                 temp[a++] = array[j];
